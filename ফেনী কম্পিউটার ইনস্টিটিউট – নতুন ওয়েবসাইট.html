@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ফেনী কম্পিউটার ইনস্টিটিউট</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f8fb;--card:#fff;--ink:#0f1b2d;--mute:#5b6b82;--line:#e2e8f0;--pri:#0a7c5a;--pri2:#0b3d91;--soft:#e6f4ef}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131c2e;--ink:#eaf0f8;--mute:#9aa9bf;--line:#243049;--pri:#34d399;--pri2:#7aa7ff;--soft:#10281f}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131c2e;--ink:#eaf0f8;--mute:#9aa9bf;--line:#243049;--pri:#34d399;--pri2:#7aa7ff;--soft:#10281f}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hind Siliguri',system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo i{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px}
+.logo small{display:block;font-weight:400;color:var(--mute);font-size:11px;line-height:1}
+nav{display:flex;gap:4px;overflow-x:auto}
+nav a{padding:8px 12px;border-radius:8px;font-size:15px;color:var(--mute);white-space:nowrap}
+nav a:hover{background:var(--soft);color:var(--pri)}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;background:var(--pri);color:#fff}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.hero{padding:64px 0 48px;background:radial-gradient(900px 340px at 85% -10%,var(--soft),transparent)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+.tag{display:inline-block;background:var(--soft);color:var(--pri);padding:4px 12px;border-radius:99px;font-size:13px;font-weight:600}
+h1{font-size:clamp(30px,5vw,50px);line-height:1.2;margin:14px 0}
+h1 span{background:linear-gradient(90deg,var(--pri),var(--pri2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);font-size:18px;max-width:520px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 12px 40px rgba(10,30,60,.08)}
+.panel h3{margin:0 0 12px;font-size:17px}
+.notice{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.notice:first-of-type{border-top:0}
+.notice b{min-width:46px;text-align:center;background:var(--soft);color:var(--pri);border-radius:8px;padding:2px 0;font-size:13px;line-height:1.3}
+.notice span{font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.stat strong{display:block;font-size:30px;color:var(--pri)}
+.stat span{color:var(--mute);font-size:14px}
+section{padding:56px 0}
+h2{font-size:28px;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--pri)}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:22px;margin-bottom:12px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--mute);font-size:15px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.quote{background:linear-gradient(135deg,var(--pri2),var(--pri));color:#fff;border-radius:20px;padding:30px;font-size:22px;font-weight:600}
+.quote small{display:block;opacity:.85;font-weight:400;font-size:14px;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--card);border:1px solid var(--line);padding:9px 16px;border-radius:99px;font-size:15px}
+footer{background:var(--card);border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:820px){.hero .wrap,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#"><i>FCI</i><div>ফেনী কম্পিউটার ইনস্টিটিউট<small>Feni Computer Institute</small></div></a>
+  <nav><a href="#about">পরিচিতি</a><a href="#dept">বিভাগ</a><a href="#notice">নোটিশ</a><a href="#life">ক্যাম্পাস লাইফ</a><a href="#contact">যোগাযোগ</a></nav>
+  <a class="btn" href="#contact">ভর্তি তথ্য</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="tag">বাংলাদেশের প্রথম ICT-ভিত্তিক পলিটেকনিক</span>
+    <h1>প্রযুক্তিতে গড়ো <span>তোমার ভবিষ্যৎ</span></h1>
+    <p>ডিপ্লোমা-ইন-ইঞ্জিনিয়ারিং শিক্ষায় আধুনিক ICT দক্ষতা — ফেনী কম্পিউটার ইনস্টিটিউটে। Knowledge Has No Limit.</p>
+    <div class="cta"><a class="btn" href="#dept">বিভাগসমূহ দেখুন</a><a class="btn o" href="#notice">সর্বশেষ নোটিশ</a></div>
+  </div>
+  <div class="panel" id="notice">
+    <h3>📢 নোটিশ বোর্ড</h3>
+    <div class="notice"><b>নতুন</b><span>ভর্তি সংক্রান্ত বিজ্ঞপ্তি (নমুনা — আসল নোটিশ যুক্ত হবে)</span></div>
+    <div class="notice"><b>পরীক্ষা</b><span>সেমিস্টার পরীক্ষার রুটিন (নমুনা)</span></div>
+    <div class="notice"><b>ফলাফল</b><span>ফলাফল প্রকাশ বিজ্ঞপ্তি (নমুনা)</span></div>
+    <div class="notice"><b>ছুটি</b><span>একাডেমিক ক্যালেন্ডার (নমুনা)</span></div>
+  </div>
+</div></div>
+
+<div class="wrap"><div class="stats">
+  <div class="stat"><strong>২০০৩</strong><span>প্রতিষ্ঠা</span></div>
+  <div class="stat"><strong>১,১৭০+</strong><span>শিক্ষার্থী</span></div>
+  <div class="stat"><strong>~৩০০</strong><span>বার্ষিক ভর্তি</span></div>
+  <div class="stat"><strong>৭টি</strong><span>বহুতল ভবন</span></div>
+</div></div>
+
+<section id="dept"><div class="wrap">
+  <h2>আমাদের বিভাগ</h2><p class="sub">ডিপ্লোমা-ইন-ইঞ্জিনিয়ারিং প্রযুক্তি</p>
+  <div class="grid">
+    <div class="card"><div class="ico">💻</div><h3>কম্পিউটার সায়েন্স ও টেকনোলজি (CST)</h3><p>প্রোগ্রামিং, ডাটাবেজ, ওয়েব ও সফটওয়্যার ডেভেলপমেন্ট।</p></div>
+    <div class="card"><div class="ico">🌐</div><h3>ডাটা টেলিকম্যুনিকেশন ও নেটওয়ার্কিং (DNT)</h3><p>নেটওয়ার্ক ডিজাইন, সিকিউরিটি ও ডাটা কমিউনিকেশন।</p></div>
+    <div class="card"><div class="ico">📡</div><h3>টেলিকম্যুনিকেশন টেকনোলজি (TcT)</h3><p>টেলিকম সিস্টেম, মোবাইল ও ওয়্যারলেস প্রযুক্তি।</p></div>
+  </div>
+</div></section>
+
+<section id="about" style="padding-top:0"><div class="wrap about">
+  <div class="quote">“Knowledge Has No Limit”<small>— ফেনী কম্পিউটার ইনস্টিটিউটের মূলমন্ত্র</small></div>
+  <div>
+    <h2>প্রতিষ্ঠান পরিচিতি</h2>
+    <p class="sub" style="margin-bottom:14px">২০০৩ সালের ৬ অক্টোবর প্রতিষ্ঠিত FCI বাংলাদেশের প্রথম ও একমাত্র ICT-ভিত্তিক পলিটেকনিক ইনস্টিটিউট। প্রতি বছর প্রায় ৩০০ শিক্ষার্থী তথ্যপ্রযুক্তিতে ডিপ্লোমা কোর্সে ভর্তি হয়। শর্ট কোর্সে রয়েছে ওয়েব ডিজাইন, গ্রাফিক ডিজাইন ও IT সাপোর্ট।</p>
+    <a class="btn o" href="#life">ক্যাম্পাস লাইফ →</a>
+  </div>
+</div></section>
+
+<section id="life" style="padding-top:0"><div class="wrap">
+  <h2>ক্যাম্পাস লাইফ</h2><p class="sub">পড়াশোনার পাশাপাশি সৃজনশীল কার্যক্রম</p>
+  <div class="chips">
+    <span class="chip">🖥️ ICT Club</span><span class="chip">🎭 Cultural Club</span><span class="chip">🩸 Blood Donation Group</span>
+    <span class="chip">⛺ Rover Scout Group</span><span class="chip">♻️ BDClean</span><span class="chip">🚦 Road Safety Movement</span><span class="chip">🎤 Debating Society</span>
+  </div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <div><b style="color:var(--ink)">ফেনী কম্পিউটার ইনস্টিটিউট</b><br>নিউ রাণীরহাট, ফেনী সদর, ফেনী<br>fci_bd@yahoo.com</div>
+  <div>fci.polytech.gov.bd<br>© ২০২৬ FCI — রিডিজাইন কনসেপ্ট</div>
+</div></footer>
+</body>
+</html>
